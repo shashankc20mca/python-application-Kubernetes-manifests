@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-argo-application
+  namespace: argocd
+spec:
+  project: default
+  
+  source:
+    repoURL: https://github.com/shashankc20mca/python-application-Kubernetes-manifests
+    targetRevision: HEAD
+  destination:
+   # cluster API URL
+    server: https://kubernetes.default.svc
+    namespace: myapp
+
+  syncPolicy:
+   syncOptions:
+   # creating the namespace if not created
+   - CreateNamespace=true
+   automated:
+    # enabling automatic self-healing
+    selfHeal: true
+    # enabling automatic prunning
+    prune: true
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
