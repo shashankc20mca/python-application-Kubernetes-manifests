@@ -23,18 +23,3 @@ spec:
     selfHeal: true
     # enabling automatic prunning
     prune: true
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-
